@@ -57,7 +57,7 @@ for link in courselist.find_all('a'):
             submissionstatus = soup.find("div", {"class": "submissionstatustable"})
             alltr = submissionstatus.find_all("tr")
             duedate = alltr[2].find("td", {"class": "cell c1 lastcol"})
-            print("duedate : ", duedate.get_text())
+            print("duedate : ", duedate)
 
         #li class activity vod modtype_vod (강의VOD)
         if section.find("li", {"class": "activity vod modtype_vod "}) != None:
