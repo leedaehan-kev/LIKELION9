@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "container">
+        <a onclick="kakaoLogin();" id="custom-login-btn" href="javascript:loginWithKakao()">
+            <img
+              src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+              width="222"
+            />
+        </a>
+
+        <script>
+            Kakao.init('cc0da6398dfbf1bb2903b8ef052d5905'); //발급받은 키 중 javascript키를 사용해준다.
+            console.log(Kakao.isInitialized()); // sdk초기화여부판단
+            //카카오로그인
+            function kakaoLogin() {
+                Kakao.Auth.login({
+                success: function (response) {
+                    Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: function (response) {
+                        console.log(response)
+                    },
+                    fail: function (error) {
+                        console.log(error)
+                    },
+                    })
+                },
+                fail: function (error) {
+                    console.log(error)
+                },
+                })
+            }
+        </script>
+    </div>
+        
+    </body>
+</html>
