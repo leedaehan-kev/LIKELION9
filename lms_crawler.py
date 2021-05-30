@@ -24,7 +24,7 @@ response.raise_for_status()
 
 #Crawling 시작 
 soup=BeautifulSoup(response.text,"html.parser")
-#강의명 긁어오기
+#강의명 긁어오기+
 courselist = soup.find("div", {"class": "course_lists"})
 courses = courselist.find_all('h3')
 print("강의 리스트")
