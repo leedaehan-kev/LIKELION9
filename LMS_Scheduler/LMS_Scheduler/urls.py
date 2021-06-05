@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import account.views
+import lms.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('admin/', admin.site.urls),
+    path('', lms.views.home, name = "home"),
     path('account/', include('account.urls')),
 ]
