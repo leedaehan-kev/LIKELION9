@@ -1,67 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class = "container">
-        <a onclick="kakaoLogin();" id="custom-login-btn" href="javascript:loginWithKakao()">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+    <meta name="google-signin-client_id" content="65734798702-qiueg3uookqd99lq2m0rvq1jvmnv9cog.apps.googleusercontent.com">
+    <title>Login Page</title>
+  </head>
+  <body>
+      <div class = "container">
+        <!-- Kakao -->
+        <div id = "kakao">
+          <a onclick="kakaoLogin();" id="custom-login-btn" href="javascript:loginWithKakao()">
             <img
               src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
-              width="222"
+              width="230"
             />
-        </a>
-
-        <script>
-            Kakao.init('cc0da6398dfbf1bb2903b8ef052d5905'); //발급받은 키 중 javascript키를 사용해준다.
-            console.log(Kakao.isInitialized()); // sdk초기화여부판단
-            //카카오로그인
-            function kakaoLogin() {
-                Kakao.Auth.login({
-                success: function (response) {
-                    Kakao.API.request({
-                    url: '/v2/user/me',
-                    success: function (response) {
-                        console.log(response)
-                    },
-                    fail: function (error) {
-                        console.log(error)
-                    },
-                    })
-                },
-                fail: function (error) {
-                    console.log(error)
-                },
-                })
-            }
-        </script>
-    </div>
-        
-    </body>
-</html>
-
-
-<br>
-<br>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="65734798702-qiueg3uookqd99lq2m0rvq1jvmnv9cog.apps.googleusercontent.com">
-    <title>Document</title>
-</head>
-<body>
-    <div id="my-signin2"></div>
+          </a>
+        </div>
+        <br>
+        <br>
+        <!-- Google -->
+        <div id="my-signin2"></div>
+        <br>
+        <br>
+        <!-- Naver -->
+        <div id="naverIdLogin"></div>
+          
+      </div>
+          
+  </body>
   <script>
+    //카카오로그인
+    Kakao.init('cc0da6398dfbf1bb2903b8ef052d5905'); //발급받은 키 중 javascript키를 사용해준다.
+    console.log(Kakao.isInitialized()); // sdk초기화여부판단
+    function kakaoLogin() {
+        Kakao.Auth.login({
+        success: function (response) {
+            Kakao.API.request({
+            url: '/v2/user/me',
+            success: function (response) {
+                console.log(response)
+            },
+            fail: function (error) {
+                console.log(error)
+            },
+            })
+        },
+        fail: function (error) {
+            console.log(error)
+        },
+        })
+    }
+    //google Login
     function onSuccess(googleUser) {
       console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     }
@@ -71,7 +66,7 @@
     function renderButton() {
       gapi.signin2.render('my-signin2', {
         'scope': 'profile email',
-        'width': 240,
+        'width': 230,
         'height': 50,
         'longtitle': true,
         'theme': 'dark',
@@ -80,38 +75,17 @@
       });
     }
   </script>
-
   <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-</body>
-</html>
-
-<br>
-<br>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
-  <title>Document</title>
-</head>
-<body>
-  <div id="naverIdLogin"></div>
-    <script type="text/javascript">
-      var naverLogin = new naver.LoginWithNaverId(
-        {
-          clientId: "mR2GS4McDcq0cPHdrUy0",
-          callbackUrl: "http://127.0.0.1:8000/account/signup/",
-          isPopup: false, /* 팝업을 통한 연동처리 여부 */
-          loginButton: {color: "green", type: 3, height: 60} /* 로그인 버튼의 타입을 지정 */
-        }
-      );
-      
-      /* 설정정보를 초기화하고 연동을 준비 */
-      naverLogin.init();
-      
-    </script>
-</body>
+  <!-- Naver -->
+  <script type="text/javascript">
+    var naverLogin = new naver.LoginWithNaverId(
+      {
+        clientId: "mR2GS4McDcq0cPHdrUy0",
+        callbackUrl: "http://127.0.0.1:8000/account/signup/",
+        isPopup: false, /* 팝업을 통한 연동처리 여부 */
+        loginButton: {color: "green", type: 3, height: 50} /* 로그인 버튼의 타입을 지정 */
+      }
+    );
+    naverLogin.init();
+  </script>
 </html>
