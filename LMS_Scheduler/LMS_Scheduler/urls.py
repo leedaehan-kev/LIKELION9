@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', lms.views.home, name = "home"),
     path('account/', include('account.urls')),
+    path('oauth/', account.views.oauth, name="oauth"),
 ]

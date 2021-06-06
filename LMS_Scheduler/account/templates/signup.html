@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    {% comment %} <script src="https://developers.kakao.com/sdk/js/kakao.js"></script> {% endcomment %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
@@ -15,7 +15,7 @@
       <div class = "container">
         <!-- Kakao -->
         <div id = "kakao">
-          <a onclick="kakaoLogin();" id="custom-login-btn" href="javascript:loginWithKakao()">
+          <a href= "{% url 'kakao_login' %}">
             <img
               src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
               width="230"
@@ -35,31 +35,6 @@
           
   </body>
   <script>
-    //카카오로그인
-    Kakao.init('cc0da6398dfbf1bb2903b8ef052d5905'); //발급받은 키 중 javascript키를 사용해준다.
-    console.log(Kakao.isInitialized()); // sdk초기화여부판단
-    function kakaoLogin() {
-        Kakao.Auth.login({
-        success: function (response) {
-            Kakao.API.request({
-            url: '/v2/user/me',
-            data: {
-              property_keys: ["kakao_account.email","kakao_account.gender"]
-            },
-            success: function (response) {
-              console.log(response)
-              response.callbackUrl
-            },
-            fail: function (error) {
-                console.log(error)
-            },
-            })
-        },
-        fail: function (error) {
-            console.log(error)
-        },
-        })
-    }
     //google Login
     function onSuccess(googleUser) {
       console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
