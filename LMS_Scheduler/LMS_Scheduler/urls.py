@@ -22,7 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', lms.views.home, name = "home"),
     path('',account.views.login,name="login"),
-    path('sing/',account.views.sing,name="sing"),
+    path('login/',account.views.manuallogin,name="manuallogin"),
+    path('signup/',account.views.signup,name="signup"),
+    path('signup/IDsignup',account.views.IDsignup,name="IDsignup"),
     path('account/', include('account.urls')),
     path('oauth/', account.views.oauth, name="oauth"),
 ]
