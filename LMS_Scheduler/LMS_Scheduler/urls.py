@@ -20,7 +20,9 @@ import lms.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', lms.views.home, name = "home"),
+    path('home/', lms.views.home, name = "home"),
+    path('',account.views.login,name="login"),
+    path('sing/',account.views.sing,name="sing"),
     path('account/', include('account.urls')),
     path('oauth/', account.views.oauth, name="oauth"),
 ]
