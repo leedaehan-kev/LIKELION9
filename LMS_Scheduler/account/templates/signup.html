@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
     {% comment %} <script src="https://developers.kakao.com/sdk/js/kakao.js"></script> {% endcomment %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -12,26 +14,26 @@
     <title>Login Page</title>
   </head>
   <body>
-      <div class = "container">
-        <!-- Kakao -->
-        <div id = "kakao">
-          <a href= "{% url 'kakao_login' %}">
-            <img
-              src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
-              width="230"
-            />
-          </a>
-        </div>
-        <br>
-        <br>
-        <!-- Google -->
-        <div id="my-signin2"></div>
-        <br>
-        <br>
-        <!-- Naver -->
-        <div id="naverIdLogin"></div>
-          
-      </div>
+    <div class = "container">
+      <div class = "content">
+          <div class = "logo">
+            <h1>회원가입</h1>
+          </div>
+          <div class = "login">   
+                <div class = "kakaoLogin">
+                    <a href= "{% url 'kakao_login' %}">
+                        <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="300"/>
+                    </a>
+                </div>
+                <div id="my-signin2">
+                    <a href= ""><h2>google 로그인</h2></a>
+                </div>
+                <div class = "manualLogin loginbutton">
+                    <a href= ""><h2>ID/비밀번호 로그인</h2></a>
+                </div>
+            </div>  
+      </div>    
+    </div>
           
   </body>
   <script>

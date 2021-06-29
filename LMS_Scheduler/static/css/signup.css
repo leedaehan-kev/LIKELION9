@@ -1,0 +1,25 @@
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.login{
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.login a{
+    color: black;
+    text-decoration: none;
+}
+
+.loginbutton{
+    margin: 10px;
+    border: 1px solid black;
+}
