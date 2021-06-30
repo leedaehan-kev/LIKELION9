@@ -14,7 +14,7 @@
                 <div class = "logo">
                     <h1>개강한 대학생</h1>
                 </div>
-                <form class = "login" method="POST" action="{%url 'IDsignup' %}">
+                <form class = "login" method="POST" action="{%url 'idSignup' %}">
                     {% csrf_token %}
                     {% if error %}
                         <p>{{error}}</p>

@@ -24,7 +24,7 @@ urlpatterns = [
     path('',account.views.login,name="login"),
     path('login/',account.views.manuallogin,name="manuallogin"),
     path('signup/',account.views.signup,name="signup"),
-    path('signup/IDsignup',account.views.IDsignup,name="IDsignup"),
+    path('signup/IDsignup',account.views.idSignup,name="idSignup"),
     path('account/', include('account.urls')),
     path('oauth/', account.views.oauth, name="oauth"),
 ]

@@ -31,9 +31,9 @@ def login(request):
             auth.login(request,user)
             return redirect('/home')
         else:
-            return render(request,'login.html',{'error':"사용자 이름 혹은 패스워드가 일치하지 않습니다"})
+            return render(request,'mainLogin.html',{'error':"사용자 이름 혹은 패스워드가 일치하지 않습니다"})
     else:
-        return render(request,'login.html')
+        return render(request,'mainLogin.html')
 
 def logout(request):
     auth.logout(request)
@@ -44,24 +44,24 @@ def signup(request):
     return render(request,'signup.html')
 
 def idsignuppage(request):
-    return render(request, 'IDsignup.html')
+    return render(request, 'idSignup.html')
 
-def IDsignup(request):
+def idSignup(request):
     if request.method=="POST":
         username=request.POST['username']
         password=request.POST['password']
         if User.objects.filter(username=username).exists():
-            return render(request,'IDsignup.html',{'error':"이미 존재하는 사용자입니다."})
+            return render(request,'idSignup.html',{'error':"이미 존재하는 사용자입니다."})
         if password==request.POST['passwordCheck']:
             user=User.objects.create_user(
                 username,password=password
             )
             auth.login(request,user)
-            return render(request,'home.html')
+            return render(request,'lmsInfo.html')
         else :
-            return render(request,'IDsignup.html',{'error':"비밀번호 확인이 일치하지 않습니다"})
+            return render(request,'idSignup.html',{'error':"비밀번호 확인이 일치하지 않습니다"})
     else:
-        return render(request,'IDsignup.html')
+        return render(request,'idSignup.html')
 
 
 def manuallogin(request):
