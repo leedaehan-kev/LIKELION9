@@ -1,8 +1,14 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .content{
     display: flex;
-    align-items: center;
     flex-direction: column;
-    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .login{
@@ -10,8 +16,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 50px;
-    border: 1px solid black;
+    margin: 30px 30px 10px 30px;
+    border-bottom: 1px solid rgb(161, 161, 161);
 }
 
 .login a{
@@ -19,7 +25,18 @@
     text-decoration: none;
 }
 
-.loginbutton{
-    margin: 10px;
-    border: 1px solid black;
+.button{
+    display: flex;
+    margin-bottom: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    width: 400px;
+    height: 35px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.manualLogin a{
+    color: black;
+    text-decoration: none;
 }

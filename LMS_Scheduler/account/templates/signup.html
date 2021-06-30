@@ -16,22 +16,20 @@
   <body>
     <div class = "container">
       <div class = "content">
-          <div class = "logo">
+        <div class = "logo">
             <h1>회원가입</h1>
-          </div>
-          <div class = "login">   
-                <div class = "kakaoLogin">
-                    <a href= "{% url 'kakao_login' %}">
-                        <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="300"/>
-                    </a>
-                </div>
-                <div id="my-signin2">
-                    <a href= ""><h2>google 회원가입</h2></a>
-                </div>
-                <div class = "manualLogin loginbutton">
-                    <a href= "{% url 'idSignup' %}"><h2>ID/비밀번호 회원가입</h2></a>
-                </div>
+        </div>
+        <div class = "login">
+            <div id="my-signin2" class = "button">
+                <a href= "">구글로 회원가입</a>
+            </div>   
+            <div class = "kakaoLogin button">
+                <a href= "{% url 'kakao_login' %}">카카오로 회원가입</a>
+            </div>
             </div>  
+            <div class = "manualLogin button">
+                <a href= "{% url 'idSignup' %}">ID 비밀번호 회원가입</a>
+            </div>
       </div>    
     </div>
           
@@ -44,17 +42,7 @@
     function onFailure(error) {
       console.log(error);
     }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 230,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
+    
   </script>
   <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
   <!-- Naver -->
