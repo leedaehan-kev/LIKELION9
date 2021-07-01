@@ -8,7 +8,7 @@ from django.contrib import auth
 def oauth(request):
     code = request.GET['code']
     print("code = ", str(code))
-    return render(request, 'home.html')
+    return render(request, 'lmsInfo.html')
 
 def kakao_login(request):
     login_request_uri = 'https://kauth.kakao.com/oauth/authorize?'
