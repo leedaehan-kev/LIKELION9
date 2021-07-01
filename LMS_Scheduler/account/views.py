@@ -1,13 +1,15 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth
-
+from .models import *
+from django.http import JsonResponse  
 # Create your views here.
 
 
 def oauth(request):
     code = request.GET['code']
     print("code = ", str(code))
+    
     return render(request, 'lmsInfo.html')
 
 def kakao_login(request):
@@ -62,6 +64,21 @@ def idSignup(request):
             return render(request,'idSignup.html',{'error':"비밀번호 확인이 일치하지 않습니다"})
     else:
         return render(request,'idSignup.html')
+
+def lmsSignup(request):
+    if request.method=="POST":
+        user = request.user
+        lmsId=request.POST['lmsId']
+        lmsPwd=request.POST['lmsPwd']
+        if lmsPwd==request.POST['lmsPwdCheck']:
+            customer = Customer(user=user, lmsId = lmsId, lmsPwd=lmsPwd)
+            customer.save()
+            return render(request,'home.html')
+        else :
+            return render(request,'lmsInfo.html',{'error':"비밀번호 확인이 일치하지 않습니다"})
+    else:
+        return render(request,'lmsInfo.html')
+
 
 
 def manuallogin(request):
