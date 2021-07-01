@@ -21,5 +21,5 @@ class Customer(models.Model):
     # type = models.IntegerField()
     # language = models.IntegerField()
 
-    # def __str__(self):
-    # 	return self.user
+    def __str__(self):
+        return self.user
