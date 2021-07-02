@@ -37,7 +37,7 @@ def oauth(request):
             return render(request,'mainLogin.html',{'error':"이미 존재하는 사용자입니다."})
         else: 
             user=User.objects.create_user(
-                kakaoId
+                kakaoId, password='0'
             )
             auth.login(request,user)
         return render(request, 'lmsInfo.html')
