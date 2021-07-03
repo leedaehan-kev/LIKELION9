@@ -7,46 +7,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개강한 대학생</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/stopwatch.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--sns아이콘!-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- navbar 라미-->
-    <div id="header"> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">개강한 대학생</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">출석체크</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">마이페이지</a>
-                        </li>
-                    </ul>
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class = "header_inner">
+            <!-- header left -->
+            <div class = "header_left">
+                <!-- logo -->
+                <div class = "logo">
+                    <a class = "nav" href="/" title = "home" class = "logo_text">About us</a>
+                </div>
+                <!-- end logo -->
+            </div>
+            <!-- end header left -->
+            <div class = "header_mid">
+                <div class = "logo">
+                    <a href="/" title = "home" class = "logo_text">개강한 대학생</a>
                 </div>
             </div>
-        </nav>
-    </div>
+            <!-- header right -->
+            <div class = "header_right">
+                <a class = "nav" href="">출석체크</a>
+                <a class = "nav" href="">마이페이지</a>
+                <a class = "nav" href="">로그아웃</a>
+            </div>
+            <!-- end header right -->
+        </div>
+        <!-- end header inner -->
+    </header>
 
     <!-- 본문 내용 -->
-    <div class = "timer">타이머가 들어갈 자리입니다</div>
-    <div class = "container">
-        <div class = "today">Today</div>
-        <div class = "task_container">
-            <div class = "left_arrow"><-</div>
-            <div class = "day_box"></div>
-            <div class = "day_box"></div>
-            <div class = "day_box"></div>
-            <div class = "day_box"></div>
-            <div class = "day_box"></div>
-            <div class = "right_arrow">-></div>
-        </div>
+    <div class = "contain">
+        <div class="content">
+            <div class = "timer">
+                <div id='timerBox' class="timerBox">
+                    <div id="time" class="time">00:00:00</div>
+                </div>
+                <div class="btnBox">
+                    <i id="startbtn" class="fa fa-play" aria-hidden="true"></i>
+                    <i id="pausebtn" class="fa fa-pause" aria-hidden="true"></i>
+                    <i id="stopbtn" class="fa fa-stop" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class = "today">Today</div>
+            <div class = "task_container">
+                <p class = "arrows"><i class="arrow left"></i></p>
+                <div class = "day_box">
+                    <div class = "day">월</div>
+                    <div class="lecture">
+                        <p>강의</p>
+                        <ul class ="list">
+                            <li>취창업</li>
+                            <li>동철이</li>
+                            <li>테니스</li>
+                        </ul>
+                    </div>
+                    <div class = "border"></div>
+                    <div class="assignment"> 
+                        <p>과제</p>
+                        <ul class ="list">
+                            <li>출석과제</li>
+                            <li>레포트</li>
+                            <li>취창업</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "day_box">
+                    <div class = "day">화</div>
+                    <div class="lecture">
+                        <p>강의</p>
+                        <ul class ="list">
+                            <li>취창업</li>
+                            <li>동철이</li>
+                            <li>테니스</li>
+                        </ul>
+                    </div>
+                    <div class = "border"></div>
+                    <div class="assignment"> 
+                        <p>과제</p>
+                        <ul class ="list">
+                            <li>출석과제</li>
+                            <li>레포트</li>
+                            <li>취창업</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "day_box today_box">
+                    <div class = "day">수</div>
+                    <div class="lecture">
+                        <p>강의</p>
+                        <ul class ="list">
+                            <li><a class = "green" href="">테니스</a></li>
+                            <li><div class = "red"><a  href="">소프트웨어 산업과 커리어 전략</a></div></li>
+                            <li><a class = "orange" href="">테니스</a></li>
+                        </ul>
+                    </div>
+                    <div class = "border"></div>
+                    <div class="assignment"> 
+                        <p>과제</p>
+                        <ul class ="list">
+                            <li>출석과제</li>
+                            <li>레포트</li>
+                            <li>취창업</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "day_box">
+                    <div class = "day">목</div>
+                    <div class="lecture">
+                        <p>강의</p>
+                        <ul class ="list">
+                            <li><a class = "green" href="">테니스</a></li>
+                            <li>동철이</li>
+                            <li>테니스</li>
+                        </ul>
+                    </div>
+                    <div class = "border"></div>
+                    <div class="assignment"> 
+                        <p>과제</p>
+                        <ul class ="list">
+                            <li>출석과제</li>
+                            <li><a class = "red" href="">테니스</a></li>
+                            <li>취창업</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "day_box">
+                    <div class = "day">금</div>
+                    <div class="lecture">
+                        <p>강의</p>
+                        <ul class ="list">
+                            <li>취창업</li>
+                            <li>동철이</li>
+                            <li>테니스</li>
+                        </ul>
+                    </div>
+                    <div class = "border"></div>
+                    <div class="assignment"> 
+                        <p>과제</p>
+                        <ul class ="list">
+                            <li>출석과제</li>
+                            <li>레포트</li>
+                            <li><a class = "orange" href="">테니스</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class = "arrows"><i class="arrow right"></i></p>
+            </div>
+        </div>  
     </div>
 
     <!--footer : 병구 담당-->

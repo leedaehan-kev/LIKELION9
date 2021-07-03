@@ -1,46 +1,202 @@
 body {
-    background-color: #FFF;
-  }
+  background-color: #FFF;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+/* header */
+header{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(150, 150, 150);
+  font-family: 'Nanum Gothic', sans-serif;
+}
 
-.container{
-  margin: 50px auto;
+.header_inner{
+  margin: 0 auto;
+  width: 1800px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_left{
+  display: flex;
+  justify-content: flex-start;
+  width: 33.3%;
+}
+.nav{
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin-right: 20px;
+}
+.header_mid{
+  display: flex;
+  justify-content: center;
+  width:33.3%;
+}
+.logo{
+  margin: 0;
+}
+.logo a{
+  text-decoration: none;
+  color: #333;
+  font-size: 22px;
+}
+
+.header_right{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 33.3%;
+}
+
+
+/* Body */
+.contain{
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
 .task_container{
   display: flex;
   margin: 20px 0px;
   justify-content: center;
 }
-
+.day{
+  font-weight: bold;
+}
 .today{
   display: flex;
   justify-content: center;
-
+  font-size: 18px;
+  margin-top: 20px;
+  color: #db44c7;
+  font-weight: bold;
 }
 
 .day_box {
-  border: 2px solid #9DD1F1;
-  display: inline-block;
-  height: 550px;
-  margin: 0px 10px;
+  border: 1px solid #6D6D6D;
+  border-radius: 8px;
+  display: flex;
+  height: 700px;
+  margin: 0px 10px 70px 10px;
   text-align: center;
   justify-content: center;
-  width: 230px;
+  flex-direction: column;
+  width: 300px;
+  font-size: 1.2rem;
+}
+.day_box p{
+  font-weight:bold;
+}
+.lecture{
+  margin-top: 10px;
+  height: 300px;
+  text-align: left;
+  padding: 16px;
 }
 
+.list{
+  list-style:square;
+}
+
+.list li{
+  margin: 8px;
+  text-decoration: none;
+}
+.list li a{
+  padding:2px;
+  text-decoration: none;
+  color: black;
+  
+}
+
+.red{
+  border:2px solid red;
+  border-radius: 4px;
+}
+
+.green{
+  border:2px solid green;
+  border-radius: 4px;
+}
+.orange{
+  border:2px solid rgb(248, 136, 7);
+  border-radius: 4px;
+}
+.border{
+  border: 1px solid #6D6D6D;
+}
+.assignment{
+  margin-top: 10px;
+  height: 300px;
+  text-align: left;
+  padding: 16px;
+}
+
+.today_box{
+  border: 3px solid #6D6D6D;
+}
 .timer{
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  font-size: 18px;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
-.left_arrow{
+
+.timer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timerBox{
+  width: 150px;
+}
+.timerBox .time{
+  font-size: 20px;
+  color: #4C4C4C;
+  text-align: center;
+  font-family: sans-serif;
+}
+.btnBox{
+  margin: 10px;
+  text-align: center;
+}
+.btnBox .fa{
+  margin: 0px 5px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.arrows{
   display: flex;
   align-items:center;
-} 
-.right_arrow{
-  display: flex;
-  align-items:center;
-} 
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
