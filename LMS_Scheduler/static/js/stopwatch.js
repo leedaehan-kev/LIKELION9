@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 function init(){
-  document.getElementById("time").innerHTML = "00:00:00";
+  document.getElementById("time").innerHTML = "00시간 00분 00초";
 }
 
 function buttonEvt(){
@@ -47,7 +47,7 @@ function buttonEvt(){
         ts = "0" + sec;
         }
 
-        document.getElementById("time").innerHTML = th + ":" + tm + ":" + ts;
+        document.getElementById("time").innerHTML = th + "시간 " + tm + "분 " + ts + "초";
       }, 1000);
     }
   });
