@@ -30,4 +30,5 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('oauth/', account.views.oauth, name="oauth"),
     path('kakaologin/', account.views.kakoredirect, name="kakaologin"),
+    path('calendar/', account.views.calendar, name = "calendar"),
 ]

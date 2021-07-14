@@ -133,3 +133,6 @@ def lmsSignup(request):
 
 def manuallogin(request):
     return render(request,'idLogin.html')
+
+def calendar(request):
+    return render(request,'calendar.html')

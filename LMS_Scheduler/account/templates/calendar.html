@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}" />
+    <title>Calendar</title>
+  </head>
+  <body>
+    <header>
+      <!-- header inner -->
+      <div class="header_inner">
+        <!-- header left -->
+        <div class="header_left">
+          <!-- logo -->
+          <div class="logo">
+            <a class="nav" href="/" title="home" class="logo_text">About us</a>
+          </div>
+          <!-- end logo -->
+        </div>
+        <!-- end header left -->
+        <div class="header_mid">
+          <div class="logo">
+            <img src="{% static 'leftarm.png' %}" width="60px" />
+            <a href="/" title="home" class="logo_text">개강한 대학생</a>
+            <img src="{% static 'rightarm.png' %}" width="60px" />
+          </div>
+        </div>
+        <!-- header right -->
+        <div class="header_right">
+          <a class="nav" href="">출석체크</a>
+          <a class="nav" href="">마이페이지</a>
+          <a class="nav" href="">로그아웃</a>
+        </div>
+        <!-- end header right -->
+      </div>
+      <!-- end header inner -->
+    </header>
+
+    <div class="contain">
+      <div class="content">
+        <div class="content_top">
+          <div class="top_left" id="customizing">
+            <a href="">커스터마이징</a>
+          </div>
+          <div class="top_center" id="date">
+            <a href="">날짜</a>
+          </div>
+          <div class="top_right">
+            <div class="analysis">
+              <a href="">통계</a>
+            </div>
+            <div class="stamp">
+              <img src="" alt="" />
+              <p>개수</p>
+            </div>
+          </div>
+        </div>
+        <div class="content_bottom light">
+          <div class="calendar">
+            <div class="calendar-header">
+              <span class="month-picker" id="month-picker">February</span>
+              <div class="year-picker">
+                <span class="year-change" id="prev-year">
+                  <pre><</pre>
+                </span>
+                <span id="year">2021</span>
+                <span class="year-change" id="next-year">
+                  <pre>></pre>
+                </span>
+              </div>
+            </div>
+            <div class="calendar-body">
+              <div class="calendar-week-day">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+              <div class="calendar-days"></div>
+            </div>
+            <div class="month-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/calendar.js' %}"></script>
+  </body>
+</html>
