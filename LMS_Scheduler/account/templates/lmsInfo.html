@@ -12,7 +12,9 @@
         <div class = "container">
             <div class = "content">
                 <div class = "logo">
+                    <img src="{% static 'leftarm.png' %}" width="60px"> 
                     <h1>개강한 대학생</h1>
+                    <img src="{% static 'rightarm.png' %}" width="60px">
                 </div>
                 <form class = "login" method="POST" action="{%url 'lmsSignup' %}">
                     {% csrf_token %}
@@ -23,7 +25,7 @@
                     <input class = "input"  name="lmsId" type="text" placeholder="학교 LMS 아이디">
                     <input class = "input" name="lmsPwd" type="password" placeholder="학교 LMS 비밀번호">
                     <input class = "input" name="lmsPwdCheck" type="password" placeholder="비밀번호 확인">
-                    <input class = "loginbutton" type="submit" value="로그인">
+                    <input class = "loginbutton" type="submit" value="회원가입">
                 </form>
             </div>
         </div>

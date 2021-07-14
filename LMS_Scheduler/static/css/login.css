@@ -11,6 +11,12 @@
     justify-content: center;
 }
 
+.logo{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
 .login{
     color: black;
     display: flex;
@@ -19,7 +25,11 @@
     margin: 30px 30px 10px 30px;
     border-bottom: 1px solid rgb(161, 161, 161);
 }
-
+.logo{
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
 .login a{
     color: black;
     text-decoration: none;
@@ -38,4 +48,9 @@
     text-align: center;
     flex-direction: column;
     justify-content: center;
+}
+
+.button:hover,
+.button:active{
+    background-color: rgba(209, 242, 255, 0.945);
 }
