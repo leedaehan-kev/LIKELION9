@@ -89,7 +89,7 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    return render(request, 'home.html')
 
 
 def signup(request):
@@ -128,8 +128,6 @@ def lmsSignup(request):
             return render(request,'lmsInfo.html',{'error':"비밀번호 확인이 일치하지 않습니다"})
     else:
         return render(request,'lmsInfo.html')
-
-
 
 def manuallogin(request):
     return render(request,'idLogin.html')
