@@ -75,17 +75,7 @@ def kakao_login(request):
 
 
 def login(request):
-    if request.method=="POST":
-        username=request.POST['username']
-        password=request.POST['password']
-        user=auth.authenticate(request,username=username,password=password)
-        if user is not None:
-            auth.login(request,user)
-            return redirect('/home')
-        else:
-            return render(request,'mainLogin.html',{'error':"사용자 이름 혹은 패스워드가 일치하지 않습니다"})
-    else:
-        return render(request,'mainLogin.html')
+    return render(request, "mainLogin.html")
 
 def logout(request):
     auth.logout(request)
@@ -130,7 +120,18 @@ def lmsSignup(request):
         return render(request,'lmsInfo.html')
 
 def manuallogin(request):
-    return render(request,'idLogin.html')
+    if request.method=="POST":
+        username=request.POST['username']
+        password=request.POST['password']
+        user=auth.authenticate(request,username=username,password=password)
+        print(user)
+        if user != None:
+            auth.login(request,user)
+            return render(request,'home.html')
+        else:
+            return render(request,'idLogin.html',{'error':"사용자 이름 혹은 패스워드가 일치하지 않습니다"})
+    else:
+        return render(request,'idLogin.html')
 
 def calendar(request):
     return render(request,'calendar.html')
