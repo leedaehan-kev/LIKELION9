@@ -138,3 +138,10 @@ def calendar(request):
 
 def mypage(request):
     return render(request,'mypage.html')
+
+def customize(request):
+    return render(request, 'customize.html')
+
+
+def new(request):
+    return render(request,'home.html')

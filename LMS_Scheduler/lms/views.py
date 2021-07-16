@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from bs4 import BeautifulSoup
 import requests
 from account.models import Customer
@@ -125,4 +125,4 @@ def home(request):
     #     print("------------------------------------")
 
     # print(lectures)
-    return render(request,"home.html",)
+    return redirect('/')
