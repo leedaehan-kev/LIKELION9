@@ -73,13 +73,12 @@ def kakao_login(request):
     return redirect(login_request_uri)
 
 
-
-def login(request):
+def mainLogin(request):
     return render(request, "mainLogin.html")
 
 def logout(request):
     auth.logout(request)
-    return render(request, 'home.html')
+    return render(request, 'mainLogin.html')
 
 
 def signup(request):
@@ -104,8 +103,8 @@ def idSignup(request):
             return render(request,'idSignup.html',{'error':"비밀번호 확인이 일치하지 않습니다"})
     else:
         return render(request,'idSignup.html')
-
-def lmsSignup(request):
+#lmssignup과 lmsinfo는 동일한 기능을 하는 이름
+def lmsSignup(request): 
     if request.method=="POST":
         user = request.user
         lmsId=request.POST['lmsId']
@@ -118,7 +117,7 @@ def lmsSignup(request):
             return render(request,'lmsInfo.html',{'error':"비밀번호 확인이 일치하지 않습니다"})
     else:
         return render(request,'lmsInfo.html')
-
+#초기로그인
 def manuallogin(request):
     if request.method=="POST":
         username=request.POST['username']
@@ -135,3 +134,7 @@ def manuallogin(request):
 
 def calendar(request):
     return render(request,'calendar.html')
+
+
+def mypage(request):
+    return render(request,'mypage.html')
