@@ -17,6 +17,7 @@ urlpatterns = [
     path('calendar/', views.calendar, name = "calendar"),
     path('mypage/',views.mypage,name="mypage"),
     path('calendar/customize', views.customize, name = "customize"),
-    path('home/', lms.views.home, name = "home"),
+    path('new/',views.new,name="new"),
+
 
 ]

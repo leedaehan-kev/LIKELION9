@@ -125,4 +125,4 @@ def home(request):
     #     print("------------------------------------")
 
     # print(lectures)
-    return redirect('/')
+    return render(request,'home.html')
